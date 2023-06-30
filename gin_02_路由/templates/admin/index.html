@@ -1,0 +1,31 @@
+{{ define "admin/index.html" }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>{{ .title }} </h2>
+
+    <!--条件判断-->
+    {{ if ge .score 60 }}
+        及格
+    {{ else }}
+        不及格
+    {{ end }}
+
+<hr>
+<!--循环遍历数据-->
+
+<ul>
+    {{ range $key, $value := .hobby }}
+    <li>{{ $value }}<li>
+    {{ end }}
+</ul>
+
+
+</body>
+</html>
+{{ end }}
