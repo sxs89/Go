@@ -14,7 +14,8 @@ func init() {
 	fmt.Println("初始化db中的init")
 
 	// 加载 app.ini文件配置动态获取文件信息内容
-	config, er := ini.Load("gin_zhenghe/conf/app.ini")
+	//config, er := ini.Load("gin_zhenghe/conf/app.ini")
+	config, er := ini.Load("D:\\WEB\\Go\\gin_zhenghe\\conf\\app.ini")
 	if er != nil {
 		fmt.Printf("Fail to read file: %v", er)
 		os.Exit(1)

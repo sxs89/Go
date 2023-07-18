@@ -23,6 +23,19 @@ func AdminRoutes(r *gin.Engine) {
 		// 后台user理由
 		adminRoutes.GET("initUser", admin.UserController{}.InitUser)
 		adminRoutes.GET("getUSerList/*username", admin.UserController{}.GetUSerList)
+		adminRoutes.GET("getUserById/*id", admin.UserController{}.GetUserById)
+
+		// Jwt token验证
+		adminRoutes.GET("validateJwt", admin.UserController{}.ValidateJwt)
+		adminRoutes.GET("getToken", admin.UserController{}.GetToken)
+		adminRoutes.GET("updateJwt", admin.UserController{}.UpdateJwt)
+
+		//验证jin框架
+		adminRoutes.GET("/login", admin.UserController{}.ApiHandler)
+
+		// 权限认证
+		adminRoutes.GET("/initRole", admin.RoleController{}.InitRole)
+		adminRoutes.GET("/queryRole", admin.RoleController{}.QueryRole)
 	}
 
 }
