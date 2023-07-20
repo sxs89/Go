@@ -23,7 +23,7 @@ func testMap(num int) {
 	}
 	m[num] = sum
 	fmt.Println(m)
-	time.Sleep(time.Millisecond)
+	time.Sleep(time.Millisecond * 1000)
 	mutex.Unlock()
 	wg.Done()
 }
@@ -33,7 +33,7 @@ func test() {
 	mutex.Lock() // 加锁
 	count++
 	fmt.Println("the count is :", count)
-	time.Sleep(time.Millisecond)
+	time.Sleep(time.Millisecond * 1000)
 	mutex.Unlock() // 解锁
 	wg.Done()
 }

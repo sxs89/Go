@@ -52,6 +52,9 @@ func (con RoleController) QueryRole(c *gin.Context) {
 	}
 
 	//fmt.Println(roles)
-	c.JSON(200, roles)
+	c.JSON(http.StatusOK, gin.H{
+		"rols":  roles,
+		"hello": "world",
+	})
 
 }
