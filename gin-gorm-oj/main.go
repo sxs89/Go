@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"gin-gorm-oj/router"
+)
 
 func main() {
-	fmt.Println("sxs")
+
+	r := router.Router()
+
+	r.Run(":8003")
 }
