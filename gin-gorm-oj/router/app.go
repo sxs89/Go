@@ -12,6 +12,7 @@ func Router() *gin.Engine {
 	appRouters := r.Group("/app")
 	{
 		appRouters.GET("/ping", service.Ping)
+		appRouters.GET("/getProblemList", service.GetProblemList)
 	}
 
 	return r
