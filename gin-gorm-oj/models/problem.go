@@ -1,7 +1,6 @@
 package models
 
 import (
-	"fmt"
 	"gorm.io/gorm"
 )
 
@@ -19,11 +18,14 @@ func (table Problem) TableName() string {
 	return "problem"
 }
 
-func GetProblemList() {
-	data := make([]*Problem, 0)
+func GetProblemList(keyword string) *gorm.DB {
+	return DB.Model(new(Problem)).
+		Where("title like ? OR content like ?", "%"+keyword+"%", "%"+keyword+"%")
+
+	/*data := make([]*Problem, 0)
 	DB.Find(&data)
 	for _, v := range data {
 		fmt.Printf("Problem ===> %v", v)
-	}
+	}*/
 
 }
